@@ -28,15 +28,6 @@ this.display=false;
 
 
 
-
-
-
-
-
-
-
-
-
 /*
 // topic-1   ONE WAY AND TWO WAY DATA BINDING
 

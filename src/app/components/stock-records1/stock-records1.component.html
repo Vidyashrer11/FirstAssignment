@@ -1,0 +1,60 @@
+<h1>Stock Records 1</h1>
+<button class="btn btn-primary" (click)="hideShowTable()">Hide/Show</button>
+<!--ngIf method-2 -->
+<ng-template [ngIf]="isStock1RecordsVisible" >
+<table class="table"  >
+    <thead class="thead-dark">
+      <!--ngIf method-1 -->
+      <!-- <thead class="thead-dark" *ngIf="isStock1RecordsVisible"> -->
+      <tr>
+        <th scope="col">SL no</th>
+        <th scope="col">Stock Name</th>
+        <th scope="col">Stock Market Cap</th>
+        <th scope="col">Stock Market Sector</th>
+        <th scope="col">Release Date</th>
+        <th scope="col">Symbol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{stock1Records.id}}</td>
+        <td>{{stock1Records.stockName}}</td>
+        <td>{{stock1Records.stockMarcketCap}}</td>
+        <td>{{stock1Records.stockSector}}</td>
+        <td>{{stock1Records.releaseDate}}</td>
+        <td>{{stock1Records.symbol}}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+<!-- ngIf else method 3 -->
+<section class="section1" *ngIf="idSection1;else section2">
+  <p>section1</p>
+</section>
+<ng-template #section2>
+  <section class="section2" >
+    <p>section2</p>
+  </section>
+</ng-template>
+<!-- ngIf else method 4 -->
+<!-- if idSection1 is true it will go to *ngTemplateOutlet and excute #section3 -->
+<!-- to target some particular template we will use *ngTemplateOutlet directive -->
+<ng-container *ngIf="idSection1;else section4" >
+<ng-container *ngTemplateOutlet="section3">
+
+</ng-container>
+</ng-container>
+<ng-template #section3>
+  <section class="section3" >
+    <p>section3</p>
+  </section>
+</ng-template>
+<ng-template #section4>
+  <section class="section4" >
+    <p>section4</p>
+  </section>
+</ng-template>
+------------------------------------------------------------------
+
+  
+  
